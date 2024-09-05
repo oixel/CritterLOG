@@ -1,15 +1,58 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
+import { Button } from '../components'
 
-export default function Index() {
+const index = () => {
+  const buttonPress = () => {
+
+  }
+
+  const [isLoading, setIsLoading] = useState(false)
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+    <View>
+      <Text style = { styles.text }>critterLOG</Text>
+      <View style = { {flexDirection: 'row', justifyContent: 'center'} }>
+        
+        <Button
+          title = "Button"
+          handlePress = {buttonPress}
+          containerStyles = {styles.testStyle}
+          isLoading = {isLoading}
+        />
+        <Button
+          title = "Button"
+          handlePress = {buttonPress}
+          containerStyles = {styles.testStyle}
+          isLoading = {isLoading}
+        />
+        <Button
+          title = "Button"
+          handlePress = {buttonPress}
+          containerStyles = {styles.testStyle}
+          isLoading = {isLoading}
+        />
+      </View>
     </View>
-  );
+  )
 }
+
+export default index
+
+const styles = StyleSheet.create({
+  view: {
+    flexDirection: 'row'
+  },
+
+  text: {
+    textAlign: 'center',
+    paddingTop: 25,
+    fontWeight: 'bold'
+  },
+  
+  testStyle: {
+    marginTop: 14,
+    width: 64,
+    margin: 8
+  }
+})
