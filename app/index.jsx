@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-import { Button } from '../components'
+import { Button, SearchBar } from '../components'
 
 const index = () => {
   const buttonPress = () => {
@@ -11,25 +11,25 @@ const index = () => {
 
   return (
     <View>
-      <Text style = { styles.text }>critterLOG</Text>
+      <Text style = { [styles.text, styles.basic] }>critterLOG</Text>
+      <SearchBar></SearchBar>
       <View style = { {flexDirection: 'row', justifyContent: 'center'} }>
-        
         <Button
-          title = "Button"
+          title = "Button 1"
           handlePress = {buttonPress}
-          containerStyles = {styles.testStyle}
+          containerStyles = {[styles.buttonContainer, styles.basic]}
           isLoading = {isLoading}
         />
         <Button
-          title = "Button"
+          title = "Button 2"
           handlePress = {buttonPress}
-          containerStyles = {styles.testStyle}
+          containerStyles = {[styles.buttonContainer, styles.basic]}
           isLoading = {isLoading}
         />
         <Button
-          title = "Button"
+          title = "Button 3"
           handlePress = {buttonPress}
-          containerStyles = {styles.testStyle}
+          containerStyles = {[styles.buttonContainer, styles.basic]}
           isLoading = {isLoading}
         />
       </View>
@@ -41,18 +41,23 @@ export default index
 
 const styles = StyleSheet.create({
   view: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
+  },
+
+  basic: {
+    padding: 8
   },
 
   text: {
     textAlign: 'center',
-    paddingTop: 25,
     fontWeight: 'bold'
   },
   
-  testStyle: {
+  buttonContainer: {
     marginTop: 14,
-    width: 64,
-    margin: 8
+    margin: 8,
+
+    width: 'auto'
   }
 })
