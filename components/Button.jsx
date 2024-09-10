@@ -5,7 +5,7 @@ const Button = ({ title, handlePress, containerStyles, textStyles, isLoading }) 
   return (
     <TouchableOpacity
         onPress = {handlePress}
-        activeOpacity = {0.7}
+        activeOpacity = {0.5}
         style = { [styles.container, containerStyles, isLoading ? opacity50 : ''] }
         disabled = {isLoading}
     >
